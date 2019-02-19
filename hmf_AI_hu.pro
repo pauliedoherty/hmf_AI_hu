@@ -34,6 +34,12 @@ HEADERS += \
 FORMS += \
         mainwindow.ui
 
+LIBS += `pkg-config opencv --libs`
+LIBS += -lopencv_videoio
+LIBS += -lopencv_imgproc
+LIBS += -lopencv_core
+LIBS += -lopencv_highgui
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
